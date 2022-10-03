@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./pages/Login";
+import CategoryList from "./pages/CategoryList";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Otp from "./pages/Otp";
+import Loginuser from "./pages/Loginuser";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Login />} path="/" />
+          <Route element={<CategoryList />} path="/category" />
+          <Route element={<Otp />} path="/otp" />
+          <Route element={<Loginuser />} path="/loginuser" />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
